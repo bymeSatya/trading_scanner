@@ -134,6 +134,126 @@ Volume
 - Production-first architecture.
 - Simplicity over premature optimization.
 
+## File Structure
+
+Trading-Scanner/
+│
+├── README.md
+├── requirements.txt
+├── main.py
+├── config.py
+│
+├── docs/
+│   ├── PROJECT_CONTEXT.md
+│   ├── PROJECT_PROMPT.md
+│   ├── ARCHITECTURE.md
+│   ├── DECISIONS.md
+│   ├── ROADMAP.md
+│   ├── CODING_STANDARDS.md
+│   ├── LESSONS_LEARNED.md
+│   └── sprints/
+│       ├── SPRINT_01.md
+│       ├── SPRINT_02.md
+│       └── TEMPLATE.md
+│
+├── data/
+│   ├── loader.py
+│   ├── normalizer.py
+│   ├── market_store.py
+│   ├── metadata_store.py          # Future
+│   └── audit_logger.py            # Future
+│
+├── utils/
+│   ├── datetime_utils.py
+│   ├── file_utils.py
+│   ├── spark_utils.py
+│   ├── market_calendar.py         # Future
+│   └── common.py
+│
+├── feature_engineering/
+│   ├── feature_engineering.py
+│   ├── candle_features.py
+│   ├── trend_features.py          # Future
+│   ├── volume_features.py         # Future
+│   └── volatility_features.py     # Future
+│
+├── indicators/
+│   ├── ema.py
+│   ├── sma.py
+│   ├── rsi.py
+│   ├── macd.py
+│   ├── atr.py
+│   ├── vwap.py
+│   └── bollinger.py
+│
+├── patterns/
+│   ├── pattern_manager.py
+│   ├── hammer.py
+│   ├── doji.py
+│   ├── engulfing.py
+│   ├── morning_star.py
+│   ├── shooting_star.py
+│   ├── hanging_man.py
+│   └── ...
+│
+├── strategies/
+│   ├── strategy_manager.py
+│   ├── reversal_strategy.py
+│   ├── breakout_strategy.py
+│   ├── pullback_strategy.py
+│   └── ...
+│
+├── scanner/
+│   ├── scanner.py
+│   ├── live_scanner.py
+│   ├── result_formatter.py
+│   └── notifier.py                # Future
+│
+├── confidence/
+│   ├── confidence_engine.py
+│   ├── scoring_rules.py
+│   └── risk_reward.py
+│
+├── backtesting/
+│   ├── backtest_engine.py
+│   ├── trade_simulator.py
+│   ├── performance.py
+│   └── reports.py
+│
+├── ml/
+│   ├── dataset_builder.py
+│   ├── feature_store.py
+│   ├── train.py
+│   ├── predict.py
+│   └── models/
+│
+├── logs/
+│   ├── application.log
+│   ├── audit.log
+│   └── error.log
+│
+├── metadata/
+│   ├── latest_candle.json
+│   ├── ingestion_status.json
+│   └── scanner_status.json
+│
+├── market_data/
+│   └── SYMBOL/
+│       └── INTERVAL/
+│           └── YEAR/
+│               └── MONTH/
+│                   └── YYYY_MM_DD.parquet
+│
+├── tests/
+│   ├── test_loader.py
+│   ├── test_patterns.py
+│   ├── test_storage.py
+│   └── test_feature_engineering.py
+│
+└── notebooks/
+    ├── research.ipynb
+    ├── strategy_testing.ipynb
+    └── experiments.ipynb
 ---
 
 ## Completed
